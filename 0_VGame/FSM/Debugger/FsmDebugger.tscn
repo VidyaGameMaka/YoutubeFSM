@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://00xaftwp1vob"]
+
+[ext_resource type="Script" uid="uid://bch5wxetw5njb" path="res://0_VGame/FSM/Debugger/FsmDebugger.cs" id="1_7i7m4"]
+
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("myLabel")]
+script = ExtResource("1_7i7m4")
+myLabel = NodePath("FSM_Debugger")
+
+[node name="FSM_Debugger" type="Label" parent="."]
+offset_right = 446.0
+offset_bottom = 49.0
+text = "Previous: 
+Current: "

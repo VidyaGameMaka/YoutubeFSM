@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dihwnc1eh7wdp"]
+
+[ext_resource type="Script" uid="uid://l34mpl6haei2" path="res://0_VGame/FSM/PlatformerExample/Scripts/ExampleBullet.cs" id="1_dgatx"]
+[ext_resource type="Texture2D" uid="uid://csxexh4aw1yvo" path="res://0_VGame/Sprites/icon.svg" id="1_eccm8"]
+
+[node name="ExampleBullet" type="Node2D"]
+script = ExtResource("1_dgatx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(0.0625, 0.03125)
+texture = ExtResource("1_eccm8")

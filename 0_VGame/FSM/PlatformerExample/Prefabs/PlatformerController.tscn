@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddxucdr56xobb"]
+
+[ext_resource type="Script" uid="uid://btrf7dj5i5jcl" path="res://0_VGame/FSM/PlatformerExample/Scripts/PlatformerController.cs" id="1_pg1ey"]
+[ext_resource type="PackedScene" uid="uid://dihwnc1eh7wdp" path="res://0_VGame/FSM/PlatformerExample/Prefabs/ExampleBullet.tscn" id="2_vqpsk"]
+[ext_resource type="Texture2D" uid="uid://be7tlw4hiytwb" path="res://0_VGame/Sprites/icon_right.svg" id="3_yic6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg1ey"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_vqpsk"]
+resource_name = "Attack"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_pg1ey"]
+resource_name = "idle"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_ss3wk"]
+resource_name = "Jump"
+
+[sub_resource type="Animation" id="Animation_cdwa6"]
+resource_name = "JumpInAir"
+
+[sub_resource type="Animation" id="Animation_g3t0k"]
+resource_name = "walk"
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ss3wk"]
+_data = {
+&"Attack": SubResource("Animation_vqpsk"),
+&"Idle": SubResource("Animation_pg1ey"),
+&"Jump": SubResource("Animation_ss3wk"),
+&"JumpInAir": SubResource("Animation_cdwa6"),
+&"Walk": SubResource("Animation_g3t0k")
+}
+
+[node name="PlatformerController" type="CharacterBody2D" node_paths=PackedStringArray("_animPlayer", "_characterSprite")]
+script = ExtResource("1_pg1ey")
+_animPlayer = NodePath("AnimationPlayer")
+_characterSprite = NodePath("Sprite2D")
+bulletPfb = ExtResource("2_vqpsk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_yic6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_pg1ey")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ss3wk")
+}
