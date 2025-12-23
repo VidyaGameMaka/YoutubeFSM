@@ -4,7 +4,7 @@ namespace FSM.EmptyExample;
 /// <summary>
 /// Empty FSM Controller.
 /// </summary>
-public partial class EmptyController : StateMachineController<EmptyController> {
+public partial class EmptyController : StateMachineController2D<EmptyController> {
 
 	// 1) Nodes used by this state machine controller.
 

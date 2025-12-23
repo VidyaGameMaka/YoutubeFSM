@@ -5,7 +5,7 @@ namespace FSM.PlatformerExample;
 /// Example FSM Controller demonstrating how to set up a simple FSM using the base FSM classes.
 /// Steps 1 to 5 should be reviewed and changed for your FSM.
 /// </summary>
-public partial class PlatformerController : StateMachineController<PlatformerController> {
+public partial class PlatformerController : StateMachineController2D<PlatformerController> {
 
 	// 1) Nodes used by this state machine controller.
 	[Export] private AnimationPlayer _animPlayer;

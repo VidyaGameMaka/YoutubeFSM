@@ -6,8 +6,8 @@ namespace FSM;
 /// </summary>
 /// <typeparam name="TState"></typeparam>
 /// <typeparam name="TController"></typeparam>
-public abstract partial class StateMachineController<TController> : CharacterBody2D
-	where TController : StateMachineController<TController> {
+public abstract partial class StateMachineController2D<TController> : CharacterBody2D
+	where TController : StateMachineController2D<TController> {
 	protected StateMachine<TController> _fsm;
 	protected abstract void ConfigureStates(StateMachine<TController> fsm);
 	public override void _Ready() {
